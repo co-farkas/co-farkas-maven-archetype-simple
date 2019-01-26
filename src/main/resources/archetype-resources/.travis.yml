@@ -20,3 +20,11 @@ before_script:
   - sed -i "s/BINTRAY_API_KEY/${BINTRAY_API_KEY}/g" .travis/mvn-settings.xml
 script:
   - mvn deploy site --settings=.travis/mvn-settings.xml -Ddependency.locations.enabled=false
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script:
+      - mvn sonar:sonar -Dsonar.host.url=${SONAR_URL} -Dsonar.organization=${SONAR_ORG} -Dsonar.login=${SONAR_TOKEN}
+    on:
+      branch: master
+      condition: $TRAVIS_PULL_REQUEST = false

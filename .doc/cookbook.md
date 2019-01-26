@@ -55,6 +55,8 @@ Example:
 ```bash
 travis encrypt BINTRAY_USER="vikingfarkas" --add
 travis encrypt BINTRAY_API_KEY="****************************************" --add
+travis encrypt SONAR_ORGANIZATION="co-farkas-github" --add
+travis encrypt SONAR_TOKEN="****************************************" --add
 ```
 
 ## Bintray

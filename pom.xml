@@ -34,7 +34,7 @@
     <java.version>1.8</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
-    <!-- Versions of Plugins -->
+    <!-- Versions of Maven Plugins -->
     <maven-archetype-plugin.version>3.0.1</maven-archetype-plugin.version>
     <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
     <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
@@ -43,6 +43,7 @@
     <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
     <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
     <maven-site-plugin.version>3.7.1</maven-site-plugin.version>
+    <sonar-maven-plugin.version>3.6.0.1398</sonar-maven-plugin.version>
     <versions-maven-plugin.version>2.7</versions-maven-plugin.version>
   </properties>
   <build>
@@ -94,6 +95,11 @@
           <configuration>
             <tagNameFormat>@{project.version}</tagNameFormat>
           </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>sonar-maven-plugin</artifactId>
+          <version>${sonar-maven-plugin.version}</version>
         </plugin>
       </plugins>
     </pluginManagement>

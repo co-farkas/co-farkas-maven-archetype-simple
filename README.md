@@ -1,5 +1,6 @@
 [![Build Status][travis-ci-shield-img]][travis-ci-shield-link]
 [![Latest Stable][bintray-shield-img]][bintray-shield-link]
+[![Quality Gate][sonarcloud-shield-img]][sonarcloud-shield-link]
 
 # Farkas Co - Maven - Archetype - Simple Project
 
@@ -48,3 +49,5 @@ mvn archetype:generate \
 [bintray]:                             https://bintray.com/
 [bintray-shield-img]:                  https://api.bintray.com/packages/co-farkas/maven/co-farkas-maven-archetype-simple/images/download.svg
 [bintray-shield-link]:                 https://bintray.com/co-farkas/maven/co-farkas-maven-archetype-simple/_latestVersion
+[sonarcloud-shield-img]:               https://sonarcloud.io/api/project_badges/measure?project=co-farkas.maven.archetypes%3Aco-farkas-maven-archetype-simple&metric=alert_status
+[sonarcloud-shield-link]:              https://sonarcloud.io/dashboard?id=co-farkas.maven.archetypes%3Aco-farkas-maven-archetype-simple
