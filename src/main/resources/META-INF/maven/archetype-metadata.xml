@@ -36,6 +36,9 @@
     <requiredProperty key="copyrightOwner">
       <defaultValue>Mihaly Farkas</defaultValue>
     </requiredProperty>
+    <requiredProperty key="githubAccount">
+      <defaultValue>co-farkas</defaultValue>
+    </requiredProperty>
   </requiredProperties>
   <fileSets>
     <fileSet filtered="true">
@@ -51,6 +54,9 @@
     </fileSet>
     <fileSet>
       <directory>.mvn</directory>
+    </fileSet>
+    <fileSet>
+      <directory>src/site</directory>
     </fileSet>
     <fileSet filtered="true" packaged="true">
       <directory>src/main/java</directory>

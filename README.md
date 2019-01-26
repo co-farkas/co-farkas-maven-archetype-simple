@@ -1,4 +1,4 @@
-# Farkas Co - Maven - Archetype - Simple Project Archetype
+# Farkas Co - Maven - Archetype - Simple Project
 
 The good old [Maven Simple Project Archetype][maven-simple-project-archetype-site] on steroids.
 
