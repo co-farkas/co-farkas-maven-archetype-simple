@@ -9,13 +9,16 @@ The good old [Maven Simple Project Archetype][maven-simple-project-archetype-sit
 
 ## Added Features
 
-* Java 8 support
+* Java 8
 * Default generated version is: `0.0.1-SNAPSHOT`
 * All plugin/dependency versions are linked to maven properties
 * New properties: 
   * `projectName` - `<name/>` property of the pom.xml
   * `projectDescription` - `<description/>` property of the pom.xml
   * `urlBase` - prefix of the `<url/>` property of the pom.xml
+  * `copyrightYear`
+  * `copyrightOwner`
+  * `githubAccount`
 * New generated files:
   * `.gitignore`
     * [Maven][maven] files ignored
@@ -28,11 +31,22 @@ The good old [Maven Simple Project Archetype][maven-simple-project-archetype-sit
     * [Bintray][bintray] latest stable shield
     * [Sonarcloud][sonarcloud] quality gate shield
   * `LICENCE` _(Apache 2.0)_
- * Integration
-   * [Travis CI][travis-ci]
-   * [Bintray][bintray]
-   * [Sonarcloud][sonarcloud]
-   * [GitHub Pages][github-pages][https://pages.github.com/]
+* Unit testing
+  * [TestNG][testng]
+  * [Hamcrest][hamcrest]
+  * [JaCoCo][jacoco]
+* Site reports
+  * Javadoc API documentation.
+  * Test Javadoc API documentation.
+  * JaCoCo Coverage Report.
+  * Provides details of the plugins used by this project which have newer versions available.
+  * Provides details of the dependencies which have updated versions available.
+* Integration
+    * [GitHub][github]
+    * [GitHub Pages][github-pages]
+    * [Travis CI][travis-ci]
+    * [Bintray][bintray]
+    * [Sonarcloud][sonarcloud]
 
 ## Usage
 
@@ -56,6 +70,10 @@ mvn archetype:generate \
 [sonarcloud-shield-img]:               https://sonarcloud.io/api/project_badges/measure?project=co-farkas.maven.archetypes%3Aco-farkas-maven-archetype-simple&metric=alert_status
 [sonarcloud-shield-link]:              https://sonarcloud.io/dashboard?id=co-farkas.maven.archetypes%3Aco-farkas-maven-archetype-simple
 [sonarcloud]:                          https://sonarcloud.io/
+[github]:                              https://github.com/
 [github-pages]:                        https://pages.github.com/
 [github-pages-shield-img]:             https://img.shields.io/badge/dynamic/json.svg?label=Docs&colorB=0f80c0&query=$.version&uri=https://co-farkas.github.io/co-farkas-maven-archetype-simple/artifact-info.json
 [github-pages-shield-link]:            https://co-farkas.github.io/co-farkas-maven-archetype-simple/
+[testng]:                              https://testng.org/
+[hamcrest]:                            http://hamcrest.org/
+[jacoco]:                              https://www.eclemma.org/jacoco/

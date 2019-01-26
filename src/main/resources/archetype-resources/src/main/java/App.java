@@ -18,16 +18,24 @@
 package $package;
 
 /**
- * Hello world!
+ * Hello world! application.
  */
 public class App {
 
   /**
-   * Hello World!
+   * Main entry point of the application.
    *
-   * @param commandLineArguments
+   * @param args command line arguments
    */
-  public static void main(String... commandLineArguments) {
+  public static void main(String... args) {
+    App app = new App();
+    app.run();
+  }
+
+  /**
+   * Prints "Hello World!".
+   */
+  public void run() {
     System.out.println("Hello World!");
   }
 }

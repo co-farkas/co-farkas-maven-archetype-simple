@@ -8,6 +8,7 @@ jdk:
 cache:
   directories:
     - $HOME/.m2
+    - $HOME/.sonar
 env:
   global:
 addons:
@@ -15,9 +16,6 @@ addons:
     - github.com
 install:
   - mvn dependency:go-offline test clean --update-snapshots --fail-never -DskipTests=true
-before_script:
-  - sed -i "s/BINTRAY_USER/${BINTRAY_USER}/g" .travis/mvn-settings.xml
-  - sed -i "s/BINTRAY_API_KEY/${BINTRAY_API_KEY}/g" .travis/mvn-settings.xml
 script:
   - mvn deploy site --settings=.travis/mvn-settings.xml -Ddependency.locations.enabled=false
 deploy:

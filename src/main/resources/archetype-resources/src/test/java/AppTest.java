@@ -17,20 +17,38 @@
  */
 package $package;
 
-import org.junit.Test;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
-import static org.junit.Assert.assertTrue;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 /**
  * Unit test for simple App.
  */
 public class AppTest {
 
-  /**
-   * Rigorous Test :-)
-   */
+  private ByteArrayOutputStream outputStream;
+
+  @BeforeTest
+  public void setUpStreams() {
+    outputStream = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(outputStream));
+  }
+
   @Test
   public void shouldAnswerWithTrue() {
-    assertTrue(true);
+    App.main();
+    String output = outputStream.toString();
+    assertThat(output, equalTo("Hello World!" + System.lineSeparator()));
+  }
+
+  @AfterTest
+  public void restoreStreams() {
+    System.setOut(System.out);
   }
 }
