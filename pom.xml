@@ -17,9 +17,7 @@
   limitations under the License.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>co-farkas.maven.archetypes</groupId>
   <artifactId>co-farkas-maven-archetype-simple</artifactId>
@@ -42,6 +40,7 @@
     <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
     <maven-install-plugin.version>2.5.2</maven-install-plugin.version>
     <maven-project-info-reports-plugin.version>3.0.0</maven-project-info-reports-plugin.version>
+    <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
     <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
     <maven-site-plugin.version>3.7.1</maven-site-plugin.version>
     <versions-maven-plugin.version>2.7</versions-maven-plugin.version>
@@ -88,6 +87,13 @@
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>versions-maven-plugin</artifactId>
           <version>${versions-maven-plugin.version}</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-release-plugin</artifactId>
+          <version>${maven-release-plugin.version}</version>
+          <configuration>
+            <tagNameFormat>@{project.version}</tagNameFormat>
+          </configuration>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -150,10 +156,15 @@
   </scm>
   <distributionManagement>
     <repository>
-      <id>bintray-co-farkas-maven</id>
+      <id>bintray</id>
       <name>Farkas Co's Maven Repository on Bintray</name>
-      <url>https://bintray.com/co-farkas/maven</url>
+      <url>https://api.bintray.com/maven/co-farkas/maven/co-farkas-maven-archetype-simple/;publish=1</url>
     </repository>
+    <snapshotRepository>
+      <id>local-build</id>
+      <name>local-build</name>
+      <url>file://${project.build.directory}/maven-snapshot</url>
+    </snapshotRepository>
     <site>
       <id>website</id>
       <url>https://co-farkas.github.io/co-farkas-maven-archetype-simple</url>

@@ -41,13 +41,39 @@ mvn release:prepare
 
 ### Setup
 
-Sync your [GitHub][github] account with [Travis CI][travis-ci].
+Sync your [GitHub][github] account.
 
 
 [![https://travis-ci.org/account/repositories](travis-ci.accounts.repositories.png "https://travis-ci.org/account/repositories")](https://travis-ci.org/account/repositories)
+
+### Encryption keys
+
+See: https://docs.travis-ci.com/user/encryption-keys/
+
+Example:
+
+```bash
+travis encrypt BINTRAY_USER="vikingfarkas" --add
+travis encrypt BINTRAY_API_KEY="****************************************" --add
+```
+
+## Bintray
+
+### Retrieve API Key
+
+See: https://bintray.com/profile/edit (API Key)
+
+### Setup
+
+Create a package in your Maven repository.
+
+[![https://bintray.com/co-farkas/maven/](bintray.add-package.001.png "https://bintray.com/co-farkas/maven/")](https://bintray.com/co-farkas/maven/)
+
+[![https://bintray.com/co-farkas/maven/new/package?pkgPath=](bintray.add-package.002.png "https://bintray.com/co-farkas/maven/new/package?pkgPath=")](https://bintray.com/co-farkas/maven/new/package?pkgPath=)
 
 
 [git]:       https://git-scm.com/
 [maven]:     https://maven.apache.org/
 [github]:    https://github.com/
 [travis-ci]: https://travis-ci.org/
+[bintray]:   https://bintray.com/

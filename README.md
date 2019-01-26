@@ -1,4 +1,5 @@
 [![Build Status][travis-ci-shield-img]][travis-ci-shield-link]
+[![Latest Stable][bintray-shield-img]][bintray-shield-link]
 
 # Farkas Co - Maven - Archetype - Simple Project
 
@@ -22,9 +23,11 @@ The good old [Maven Simple Project Archetype][maven-simple-project-archetype-sit
     * Title (project name)
     * Project description
     * [Travis CI][travis-ci] build status shield
+    * [Bintray][bintray] latest stable shield
   * `LICENCE` _(Apache 2.0)_
  * Integration
    * [Travis CI][travis-ci]
+   * [Bintray][bintray]
 
 ## Usage
 
@@ -42,3 +45,6 @@ mvn archetype:generate \
 [travis-ci]:                           https://travis-ci.org/
 [travis-ci-shield-img]:                https://img.shields.io/travis/co-farkas/co-farkas-maven-archetype-simple.svg
 [travis-ci-shield-link]:               https://travis-ci.org/co-farkas/co-farkas-maven-archetype-simple
+[bintray]:                             https://bintray.com/
+[bintray-shield-img]:                  https://api.bintray.com/packages/co-farkas/maven/co-farkas-maven-archetype-simple/images/download.svg
+[bintray-shield-link]:                 https://bintray.com/co-farkas/maven/co-farkas-maven-archetype-simple/_latestVersion

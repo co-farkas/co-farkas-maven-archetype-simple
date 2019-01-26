@@ -2,16 +2,23 @@ language: java
 sudo: false
 branches:
   only:
-    - master
+  - master
 jdk:
-  - oraclejdk8
+- oraclejdk8
 cache:
   directories:
-    - $HOME/.m2
+  - "$HOME/.m2"
+env:
+  global:
+    - secure: OhGWq72o/rroVxsCGc7tImqqBvI2f1X0mQprbdt5pFIahshF4q8eNDHW9NvnnN2J90huPN164ID9rU9jwefi2Uqg0GsQ6/HMO4dDpiQsgKLW6JBLKG9C5yD27VZhF0fXfKmmwMn0RXOyQDDqfZU8Ht5NDwMRJlJGUqnKKHTAs2lZswFSj7LcfsUwp+fCoORwFJ/uE2HLg6oEWirUASccZyIHpSQm0YeN+DraG/DBiQmESn+VigkwNk51aVXa7KdEIdtesFwD0VJiPoBxATdwchJaKs9sboFIf7XGPcdaQW9dQ0gugjzSjwQKZwgmhPkd1vv09IZMRwGRp85G4QOSc83dhPK+vvZg5ANeK15cfgkAmWmDyNAtPKrEP2TjejGr5ooEOZqVai3fMz1iTw+Hr8wa8H17XuiADNmaMmtLK/TXN7Uiud605QW23dsRHFouTNlBQAiLP35IF4rmv66Nika8oULjOdHJhsAnMTilBLY9ockX/sXtGHPOIifEVl7l9RBq44Dbuby0RwiyphcaF2JTOxle7nr8DGQLLuAu2ehg4LpuEhRveiY8t9BYWNa5gk+paeajOFedMDNoFxLLElsboQUBFoK7WYcbp+Esr0lEX+wHUH7uDwlDepH8qJaIbK1r7bCArU4qT+j4Jf9XviWpwD/JFojOGw+e/JlOoGk=
+    - secure: IzOlTVow81W2PMdn84lTB59BF5MrDVEncyYU4HLfgarKynRfYeQscH1YbM9t0jpK6QxXETysYrdNIszW5i8qGGZ++CTmuDfD0ZgfK27WCQ+6/GBqmlf8WpcRtIw8DfTZlC39Jjnjbrqxt3b6P8DrKudM/EyFuQjCioctG5sjfj7mX3CDzUQ5sYkKlgpdYNrnmVr5ab783syrfS0Gq5MijbBm5vMvTz6P3WEq+MjAt8ROpeh9g0y0+BP9+E4mh44meYwX5RukTlrAcJIazsFAlKjPBlrfFn85RwhSD2YjwmuJ+4ikt4XGuCHsSR7e/qfOL9esIr6eql5Sx44pNfG8bew8UP3qKU3qbfqj3/chsUG8IaNBDdKGzXe4gS8ly/8KGkH2UBdotRrbK0VR/ShUvlOcvYdz9FoL6O09LXMqBNE0WyOP0e3d0Q0PcWm83iJm7j9NwFfEfNCesAzs3aXYU/k8eOWFMlducsqpZ/3GsiWf0nTGcn4vdKsi011ZHjwSVWsuGw6c7AuAqdd44ImJqaU6yIbvohT85zLbSXCU5Mt8lZFxPIlieqiudBzvR+L147+HolqTGwHamT1ocKVMEs0sMVRba7xAZoia2t8IGzzUF4y2YeVdYcwRF0/7KLCC6Spw2e6wwzIkZSQM0ZjCE7u7txxx2/bb+n01T7U40v0=
 addons:
   ssh_known_hosts:
     - github.com
 install:
   - mvn dependency:go-offline test clean --update-snapshots --fail-never -DskipTests=true
+before_script:
+  - sed -i "s/BINTRAY_USER/${BINTRAY_USER}/g" .travis/mvn-settings.xml
+  - sed -i "s/BINTRAY_API_KEY/${BINTRAY_API_KEY}/g" .travis/mvn-settings.xml
 script:
-  - mvn verify site
+  - mvn deploy site --settings=.travis/mvn-settings.xml -Ddependency.locations.enabled=false

@@ -40,6 +40,7 @@
     <maven-install-plugin.version>2.5.2</maven-install-plugin.version>
     <maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
     <maven-project-info-reports-plugin.version>3.0.0</maven-project-info-reports-plugin.version>
+    <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
     <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
     <maven-site-plugin.version>3.7.1</maven-site-plugin.version>
     <maven-surefire-plugin.version>2.22.1</maven-surefire-plugin.version>
@@ -107,6 +108,13 @@
           <artifactId>versions-maven-plugin</artifactId>
           <version>${versions-maven-plugin.version}</version>
         </plugin>
+        <plugin>
+          <artifactId>maven-release-plugin</artifactId>
+          <version>${maven-release-plugin.version}</version>
+          <configuration>
+            <tagNameFormat>@{project.version}</tagNameFormat>
+          </configuration>
+        </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
@@ -168,10 +176,15 @@
   </scm>
   <distributionManagement>
     <repository>
-      <id>bintray-co-farkas-maven</id>
+      <id>bintray</id>
       <name>Farkas Co's Maven Repository on Bintray</name>
-      <url>https://bintray.com/co-farkas/maven</url>
+      <url>https://api.bintray.com/maven/co-farkas/maven/${artifactId}/;publish=1</url>
     </repository>
+    <snapshotRepository>
+      <id>local-build</id>
+      <name>local-build</name>
+      <url>file://${project.build.directory}/maven-snapshot</url>
+    </snapshotRepository>
     <site>
       <id>website</id>
       <url>${urlBase}/${artifactId}</url>

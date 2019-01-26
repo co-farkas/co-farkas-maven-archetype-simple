@@ -1,1 +1,1 @@
-verify versions:display-parent-updates versions:display-property-updates site
+verify versions:display-parent-updates versions:display-property-updates deploy -Ddependency.locations.enabled=false site

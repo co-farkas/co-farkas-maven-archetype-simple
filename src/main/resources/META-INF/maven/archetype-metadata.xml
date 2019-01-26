@@ -45,6 +45,7 @@
       <directory/>
       <includes>
         <include>.gitignore</include>
+        <include>.travis.yml</include>
         <include>README.md</include>
         <include>LICENSE</include>
       </includes>
@@ -54,6 +55,9 @@
     </fileSet>
     <fileSet>
       <directory>.mvn</directory>
+    </fileSet>
+    <fileSet>
+      <directory>.travis</directory>
     </fileSet>
     <fileSet>
       <directory>src/site</directory>
