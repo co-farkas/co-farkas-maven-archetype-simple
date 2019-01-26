@@ -57,6 +57,7 @@ travis encrypt BINTRAY_USER="vikingfarkas" --add
 travis encrypt BINTRAY_API_KEY="****************************************" --add
 travis encrypt SONAR_ORGANIZATION="co-farkas-github" --add
 travis encrypt SONAR_TOKEN="****************************************" --add
+travis encrypt GITHUB_TOKEN="****************************************" --add
 ```
 
 ## Bintray
@@ -73,6 +74,11 @@ Create a package in your Maven repository.
 
 [![https://bintray.com/co-farkas/maven/new/package?pkgPath=](bintray.add-package.002.png "https://bintray.com/co-farkas/maven/new/package?pkgPath=")](https://bintray.com/co-farkas/maven/new/package?pkgPath=)
 
+## Github
+
+### Retrieve Developer Token
+
+See: https://github.com/settings/tokens
 
 [git]:       https://git-scm.com/
 [maven]:     https://maven.apache.org/

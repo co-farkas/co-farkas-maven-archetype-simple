@@ -1,6 +1,7 @@
 [![Build Status][travis-ci-shield-img]][travis-ci-shield-link]
 [![Latest Stable][bintray-shield-img]][bintray-shield-link]
 [![Quality Gate][sonarcloud-shield-img]][sonarcloud-shield-link]
+[![Site Docs][github-pages-shield-img]][github-pages-shield-link]
 
 # Farkas Co - Maven - Archetype - Simple Project
 
@@ -25,10 +26,13 @@ The good old [Maven Simple Project Archetype][maven-simple-project-archetype-sit
     * Project description
     * [Travis CI][travis-ci] build status shield
     * [Bintray][bintray] latest stable shield
+    * [Sonarcloud][sonarcloud] quality gate shield
   * `LICENCE` _(Apache 2.0)_
  * Integration
    * [Travis CI][travis-ci]
    * [Bintray][bintray]
+   * [Sonarcloud][sonarcloud]
+   * [GitHub Pages][github-pages][https://pages.github.com/]
 
 ## Usage
 
@@ -51,3 +55,7 @@ mvn archetype:generate \
 [bintray-shield-link]:                 https://bintray.com/co-farkas/maven/co-farkas-maven-archetype-simple/_latestVersion
 [sonarcloud-shield-img]:               https://sonarcloud.io/api/project_badges/measure?project=co-farkas.maven.archetypes%3Aco-farkas-maven-archetype-simple&metric=alert_status
 [sonarcloud-shield-link]:              https://sonarcloud.io/dashboard?id=co-farkas.maven.archetypes%3Aco-farkas-maven-archetype-simple
+[sonarcloud]:                          https://sonarcloud.io/
+[github-pages]:                        https://pages.github.com/
+[github-pages-shield-img]:             https://img.shields.io/badge/dynamic/json.svg?label=Docs&colorB=0f80c0&query=$.version&uri=https://co-farkas.github.io/co-farkas-maven-archetype-simple/artifact-info.json
+[github-pages-shield-link]:            https://co-farkas.github.io/co-farkas-maven-archetype-simple/

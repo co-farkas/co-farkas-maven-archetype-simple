@@ -24,7 +24,14 @@ deploy:
   - provider: script
     skip_cleanup: true
     script:
-      - mvn sonar:sonar -Dsonar.host.url=${SONAR_URL} -Dsonar.organization=${SONAR_ORG} -Dsonar.login=${SONAR_TOKEN}
+      - mvn sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=${SONAR_ORGANIZATION} -Dsonar.login=${SONAR_TOKEN}
+    on:
+      branch: master
+      condition: $TRAVIS_PULL_REQUEST = false
+  - provider: pages
+    skip_cleanup: true
+    github_token: ${GITHUB_TOKEN}
+    local_dir: target/site/
     on:
       branch: master
       condition: $TRAVIS_PULL_REQUEST = false

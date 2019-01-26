@@ -62,6 +62,9 @@
     <fileSet>
       <directory>src/site</directory>
     </fileSet>
+    <fileSet>
+      <directory>src/main/resources</directory>
+    </fileSet>
     <fileSet filtered="true" packaged="true">
       <directory>src/main/java</directory>
     </fileSet>
