@@ -37,6 +37,17 @@ mvn versions:update-properties
 mvn release:prepare
 ```
 
-[git]:   https://git-scm.com/
-[maven]: https://maven.apache.org/
+## Travis CI
 
+### Setup
+
+Sync your [GitHub][github] account with [Travis CI][travis-ci].
+
+
+[![https://travis-ci.org/account/repositories](travis-ci.accounts.repositories.png "https://travis-ci.org/account/repositories")](https://travis-ci.org/account/repositories)
+
+
+[git]:       https://git-scm.com/
+[maven]:     https://maven.apache.org/
+[github]:    https://github.com/
+[travis-ci]: https://travis-ci.org/

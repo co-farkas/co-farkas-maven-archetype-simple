@@ -1,0 +1,17 @@
+language: java
+sudo: false
+branches:
+  only:
+    - master
+jdk:
+  - oraclejdk8
+cache:
+  directories:
+    - $HOME/.m2
+addons:
+  ssh_known_hosts:
+    - github.com
+install:
+  - mvn dependency:go-offline test clean --update-snapshots --fail-never -DskipTests=true
+script:
+  - mvn verify site
