@@ -49,6 +49,9 @@
     <fileSet>
       <directory>.doc</directory>
     </fileSet>
+    <fileSet>
+      <directory>.mvn</directory>
+    </fileSet>
     <fileSet filtered="true" packaged="true">
       <directory>src/main/java</directory>
     </fileSet>

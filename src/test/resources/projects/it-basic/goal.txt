@@ -1,1 +1,1 @@
-verify
+verify versions:display-parent-updates versions:display-property-updates
