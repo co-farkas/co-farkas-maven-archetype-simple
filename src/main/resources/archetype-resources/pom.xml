@@ -231,6 +231,17 @@
     </plugins>
   </reporting>
   <url>${urlBase}/${artifactId}</url>
+  <organization>
+    <name>Farkas Co</name>
+    <url>https://github.com/co-farkas</url>
+  </organization>
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>LICENSE</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
   <scm>
     <connection>scm:git:https://github.com/${githubAccount}/${artifactId}.git</connection>
     <developerConnection>scm:git:git@github.com:${githubAccount}/${artifactId}.git</developerConnection>
@@ -257,10 +268,6 @@
     <system>GitHub Issues</system>
     <url>https://github.com/co-farkas/${artifactId}/issues</url>
   </issueManagement>
-  <organization>
-    <name>Farkas Co</name>
-    <url>https://github.com/co-farkas</url>
-  </organization>
   <developers>
     <developer>
       <id>vikingfarkas</id>
@@ -275,11 +282,4 @@
       </properties>
     </developer>
   </developers>
-  <licenses>
-    <license>
-      <name>Apache License, Version 2.0</name>
-      <url>LICENSE</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
 </project>
