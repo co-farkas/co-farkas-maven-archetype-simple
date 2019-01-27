@@ -261,7 +261,7 @@
     </snapshotRepository>
     <site>
       <id>website</id>
-      <url>${urlBase}/${artifactId}</url>
+      <url>https://${githubAccount}.github.io/${artifactId}</url>
     </site>
   </distributionManagement>
   <issueManagement>
