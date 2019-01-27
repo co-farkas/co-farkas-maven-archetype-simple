@@ -44,10 +44,7 @@
     <fileSet filtered="true">
       <directory/>
       <includes>
-        <include>.gitignore</include>
-        <include>.travis.yml</include>
-        <include>README.md</include>
-        <include>LICENSE</include>
+        <include>*</include>
       </includes>
     </fileSet>
     <fileSet>
@@ -59,14 +56,14 @@
     <fileSet>
       <directory>.travis</directory>
     </fileSet>
-    <fileSet>
-      <directory>src/site</directory>
+    <fileSet filtered="true" packaged="true">
+      <directory>src/main/java</directory>
     </fileSet>
     <fileSet>
       <directory>src/main/resources</directory>
     </fileSet>
-    <fileSet filtered="true" packaged="true">
-      <directory>src/main/java</directory>
+    <fileSet>
+      <directory>src/site</directory>
     </fileSet>
     <fileSet filtered="true" packaged="true">
       <directory>src/test/java</directory>
