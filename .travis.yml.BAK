@@ -18,9 +18,6 @@ env:
 addons:
   ssh_known_hosts:
   - github.com
-before_install:
-  - sudo apt-get install rubygems-integration
-  - gem install travis
 install:
   - mvn dependency:go-offline test clean --update-snapshots --fail-never -DskipTests=true
 script:
@@ -28,7 +25,8 @@ script:
 deploy:
   - provider: script
     skip_cleanup: true
-    script: mvn sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=${SONAR_ORGANIZATION} -Dsonar.login=${SONAR_TOKEN}
+    script:
+      - mvn sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=${SONAR_ORGANIZATION} -Dsonar.login=${SONAR_TOKEN}
     on:
       branch: master
       condition: $TRAVIS_PULL_REQUEST = false
@@ -41,7 +39,9 @@ deploy:
       condition: $TRAVIS_PULL_REQUEST = false
   - provider: script
     skip_cleanup: true
-    script: bash .travis/deploy-example.sh
+    script:
+      - ls -al
+      - ls -al .travis
     on:
       branch: master
       condition: $TRAVIS_PULL_REQUEST = false
