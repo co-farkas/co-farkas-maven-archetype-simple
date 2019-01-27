@@ -24,7 +24,7 @@
   <version position="right"/>
   <body>
     <breadcrumbs>
-      <item name="Farkas Co" href="https://co-farkas.github.io/"/>
+      <item name="${githubAccountName}" href="https://${githubAccount}.github.io/"/>
       <item name="${project.name}" href="${this.url}"/>
     </breadcrumbs>
     <menu name="Overview">

@@ -27,18 +27,17 @@
     </requiredProperty>
     <requiredProperty key="projectName"/>
     <requiredProperty key="projectDescription"/>
-    <requiredProperty key="urlBase">
-      <defaultValue>https://co-farkas.github.io</defaultValue>
-    </requiredProperty>
     <requiredProperty key="copyrightYear">
       <defaultValue>2019</defaultValue>
     </requiredProperty>
-    <requiredProperty key="copyrightOwner">
-      <defaultValue>Mihaly Farkas</defaultValue>
-    </requiredProperty>
-    <requiredProperty key="githubAccount">
-      <defaultValue>co-farkas</defaultValue>
-    </requiredProperty>
+    <requiredProperty key="copyrightOwner"/>
+    <requiredProperty key="githubAccount"/>
+    <requiredProperty key="githubAccountName"/>
+    <requiredProperty key="developerId"/>
+    <requiredProperty key="developerName"/>
+    <requiredProperty key="developerUrl"/>
+    <requiredProperty key="developerTimezone"/>
+    <requiredProperty key="developerPicUrl"/>
   </requiredProperties>
   <fileSets>
     <fileSet filtered="true">
@@ -46,6 +45,9 @@
       <includes>
         <include>*</include>
       </includes>
+      <excludes>
+        <exclude>pom.xml</exclude>
+      </excludes>
     </fileSet>
     <fileSet>
       <directory>.doc</directory>
@@ -62,7 +64,7 @@
     <fileSet>
       <directory>src/main/resources</directory>
     </fileSet>
-    <fileSet>
+    <fileSet filtered="true">
       <directory>src/site</directory>
     </fileSet>
     <fileSet filtered="true" packaged="true">

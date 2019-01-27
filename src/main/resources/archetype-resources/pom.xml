@@ -230,10 +230,10 @@
       </plugin>
     </plugins>
   </reporting>
-  <url>${urlBase}/${artifactId}</url>
+  <url>https://${githubAccount}.github.io/${artifactId}</url>
   <organization>
-    <name>Farkas Co</name>
-    <url>https://github.com/co-farkas</url>
+    <name>${githubAccountName}</name>
+    <url>https://github.com/${githubAccount}</url>
   </organization>
   <licenses>
     <license>
@@ -251,8 +251,8 @@
   <distributionManagement>
     <repository>
       <id>bintray</id>
-      <name>Farkas Co's Maven Repository on Bintray</name>
-      <url>https://api.bintray.com/maven/co-farkas/maven/${artifactId}/;publish=1</url>
+      <name>${githubAccountName}'s Maven Repository on Bintray</name>
+      <url>https://api.bintray.com/maven/${githubAccount}/maven/${artifactId}/;publish=1</url>
     </repository>
     <snapshotRepository>
       <id>local-build</id>
@@ -266,19 +266,19 @@
   </distributionManagement>
   <issueManagement>
     <system>GitHub Issues</system>
-    <url>https://github.com/co-farkas/${artifactId}/issues</url>
+    <url>https://github.com/${githubAccount}/${artifactId}/issues</url>
   </issueManagement>
   <developers>
     <developer>
-      <id>vikingfarkas</id>
-      <name>Mihaly Farkas</name>
-      <url>https://github.com/co-farkas</url>
+      <id>${developerId}</id>
+      <name>${developerName}</name>
+      <url>${developerUrl}</url>
       <roles>
         <role>developer</role>
       </roles>
-      <timezone>Europe/Budapest</timezone>
+      <timezone>${developerTimezone}</timezone>
       <properties>
-        <picUrl>https://avatars3.githubusercontent.com/u/23304170?s=160&amp;v=4</picUrl>
+        <picUrl>${developerPicUrl}</picUrl>
       </properties>
     </developer>
   </developers>
