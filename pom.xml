@@ -28,9 +28,12 @@
   <name>Archetype - co-farkas-maven-archetype-simple</name>
   <url>https://co-farkas.github.io/co-farkas-maven-archetype-simple/</url>
   <properties>
+    <!-- Build Properties -->
+    <java.version>1.8</java.version>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
   <build>
     <extensions>
