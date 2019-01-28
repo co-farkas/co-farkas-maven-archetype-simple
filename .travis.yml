@@ -7,5 +7,10 @@ cache:
     - "$HOME/.m2"
 git:
   depth: 1
+env:
+  global:
+    secure: NEfcvOqEe4xsS8obixGWemljU1KTjz+ZilvcrFCQiffbJTBHopIHsQ5/zlkscx2gz8sjmM3T6SWNMD+h7MKoITpGS3/EoK4yuGUj4fLZdZppFWHcqLTtC23ZGdtrSV9sCgXuWLL1Likx8T/6jN94iLcw+qvW3z++kPmZIBdi97xhRxXg6Un45y8eY+TDDceXYpVhIdn4i8XOyyo27Tt+a4oF/uOAEUPqju7ByTlpZJ7VYHeIsZzgZczSez+aPxKhyuOfJVscbqYCmVtuBbV91mvfGXSWrD5XnsLM74cS0eX9b4WZ6ZfMRTK9D4Nwp0UorVfzaMJvLTevmd5gzOHrSVUygCJ/B+NLnoHpoI6nntCO3kiaOEsAgmGnjtYZNV4asXMYAlRZsTmzrCNYCLh3sZa7oBet9BEb6UQDJu7rOVNwKoXvQ3elgYntIr/zhaBubBE9I+Aoh+aIkVS2B+BCZ9oX8/jq7pEHweDiU9hLTc+k7jk5yT7tc+X68zQQ4nbW8nashnmQ8M3tj0aiBNd3wA/foIurq+hEHGKrHDG6RMQhNDKfBKqVtXD6nXifVRmHq6/+XIzjOxRG7Y0XnclX9bn8pWE2zGNNERXFIa/kz2Y8L4QZis/aZ8E3JMrejsTirq/C392kctTJ4YrdPyl5CDyGVlDafARQGj73VCZT3Dc=
 script:
-  - mvn verify
+  - mvn install
+after_success:
+  - bash .travis/re-generate-example-project.sh
