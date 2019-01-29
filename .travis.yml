@@ -1,0 +1,16 @@
+language: java
+sudo: false
+jdk:
+  - oraclejdk8
+cache:
+  directories:
+    - $HOME/.m2
+git:
+  depth: false
+script:
+  - bash .travis/build.sh
+  - bash .travis/re-generate-example.sh
+after_success:
+  - bash .travis/after-success.sh
+after_failure:
+  - bash .travis/after-failure.sh
