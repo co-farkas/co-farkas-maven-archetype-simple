@@ -8,4 +8,8 @@ cache:
 git:
   depth: false
 script:
-  - bash .travis/maven-install.sh
+  - bash .travis/build.sh
+after_success:
+  - bash .travis/after-success.sh
+after_failure:
+  - bash .travis/after-failure.sh
